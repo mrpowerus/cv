@@ -1,0 +1,290 @@
+%------------------------------------------------------------------------------
+% CV in Latex
+% Author : Charles Rambo
+% Based off of: https://github.com/sb2nov/resume and Jake's Resume on Overleaf
+% Most recently updated version may be found at https://github.com/fizixmastr 
+% License : MIT
+%------------------------------------------------------------------------------
+
+\documentclass[A4,11pt]{article}
+%\documentclass[letterpaper,11pt]{article} %For use in US
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{tikz}
+\input{glyphtounicode}
+
+
+% serif
+%  \usepackage{palatino}
+% \usepackage{times} %This is the default as well
+% \usepackage{charter}
+
+% sans-serif
+% \usepackage{helvet}
+% \usepackage[sfdefault]{noto-sans}
+\usepackage[default]{sourcesanspro}
+
+%-----PAGE SETUP---------------------------------------------------------------
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-1cm}
+\addtolength{\evensidemargin}{-1cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-1cm}
+\addtolength{\textheight}{2cm}
+
+% Margins for US Letter size
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}
+%\addtolength{\topmargin}{-.5in}
+%\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0cm}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that .pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-----CUSTOM COMMANDS FOR FORMATTING SECTIONS----------------------------------
+\newcommand{\CVItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\CVSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \text{\small#1} & \text{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubItem}[1]{\CVItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\CVSubHeadingListStart}{\begin{itemize}[leftmargin=0.5cm, label={}]}
+% \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]} % Uncomment for US
+\newcommand{\CVSubHeadingListEnd}{\end{itemize}}
+\newcommand{\CVItemListStart}{\begin{itemize}}
+\newcommand{\CVItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%------------------------------------------------------------------------------
+% CV STARTS HERE  %
+%------------------------------------------------------------------------------
+\begin{document}
+
+%-----HEADING------------------------------------------------------------------
+\begin{comment}
+In Europe it is common to include a picture of ones self in the CV. Select
+which heading appropriate for the document you are creating.
+\end{comment}
+
+\begin{minipage}[c]{0.2\textwidth}
+\-\
+\end{minipage}
+\begin{minipage}[c]{0.2\textwidth}
+\begin{tikzpicture}
+    \clip (0,0) circle (1.75cm);
+    \node at (-0.05,-.7) {\includegraphics[width = 5cm]{portrait}}; 
+    % if necessary the picture may be moved by changing the at (coordinates)
+    % width defines the 'zoom' of the picture
+\end{tikzpicture}
+\hfill\vline\hfill
+\end{minipage}
+\begin{minipage}[c]{0.5\textwidth}
+    \textbf{\Huge \scshape{Mike Pieters}} \\ \vspace{1pt}
+    \small{Cloud Architect, DevOps Engineer and Python Developer} \\ \vspace{1pt} 
+    \small{Microsoft Certified: Azure Solution Architect Expert} \\ \vspace{1pt} 
+    % \scshape sets small capital letters, remove if desired
+    \small{+31 6 12 89 05 17} \\ \vspace{1pt} 
+    \href{mailto:me@mikepieters.com}{\underline{me@mikepieters.com}}\\ \vspace{1pt} 
+    % Be sure to use a professional *personal* email address
+    \href{https://www.linkedin.com/in/mjfpieters/}{\underline{linkedin.com/in/mjfpieters}} \\ \vspace{1pt} 
+    % you should adjust you linked in profile name to be professional and recognizable
+    \href{https://github.com/mrpowerus}{\underline{github.com/mrpowerus}}
+\end{minipage}
+
+% Without picture
+%\begin{center}
+%    \textbf{\Huge \scshape Charles Rambo} \\ \vspace{1pt} %\scshape sets small capital letters, remove if desired
+%    \small +1 123-456-7890 $|$ 
+%    \href{mailto:you@provider.com}{\underline{you@provider.com}} $|$\\
+%    % Be sure to use a professional *personal* email address
+%    \href{https://linkedin.com/in/your-name-here}{\underline{linkedin.com/in/charles-rambo}} $|$
+%    % you should adjust you linked in profile name to be professional and recognizable
+%    \href{https://github.com/fizixmastr}{\underline{github.com/fizixmastr}}
+%\end{center}
+
+\section{Summary}
+
+Passionate IT professional with a focus on the cloud, data and full automation. Hands-on mentality and getting things done. I do not believe that one tool/language fits all solutions. There's however a solution for all problems. I love to challenge, search for the best and simplest, and implement that.
+
+\section{Skills}
+ \begin{itemize}[leftmargin=0.5cm, label={}]
+    \small{\item{
+     \textbf{Cloud}{: Azure Cloud, Terraform, Kubernetes, Airflow, Docker, Databricks} \\
+     \textbf{Development}{: Python, Design Patterns, Linux, Bash, Powershell} \\
+     \textbf{DevOps}{: Git, Azure Pipelines, GitHub Actions, Jenkins} \\
+     \textbf{Data}{: PySpark, SQL, Databricks, Pandas} \\
+     \textbf{Visualisation}{: Python(Dash, Plotly), PowerBI, Excel} \\
+     \textbf{OO Programming Languages}{: C\#, Java} \\
+     \textbf{Documentation}{: Latex, Rst, Markdown, various documentation engines} \\
+     \textbf{Languages}{: Dutch (Native), English (Professional)} \\
+    }}
+ \end{itemize}
+
+%-----WORK EXPERIENCE----------------------------------------------------------
+\begin{comment}
+try to briefly explain what you did and why it is relevant to the position you
+are seeking
+\end{comment}
+
+\section{Work Experience}
+  \CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What you did}{When you worked there}
+%      {Who you worked for}{Where they are located}
+%      \CVItemListStart
+%        \CVItem{Why it is important to this employer}
+%      \CVItemListEnd
+    
+  
+    \CVSubheading
+      {(Big Data) Solution Architect}{September 2020 -- Present}
+      {ARAG SE}{Leusden, NL} \\ \vspace{14pt}
+      
+      With the arrival of several data scientist at ARAG NL, the need for data grew rapidly. However, the traditional BI department (consisting mainly of T-SQL developers) could not fulfill this need. I've single-handedly designed, pitched and implemented a new data platform, which is now stable and being used as the main data platform at ARAG NL. In summary: each data transformation is a separate Docker container, a product of a Azure DevOps pipeline and scheduled and monitored by Airflow. Each `trusted` data object is automatically synced to an Azure SQL Database and an API is automatically generated for each data object. This API allows for communication to all downstream web-services.
+      \vspace{-5pt}
+      \CVItemListStart
+        \CVItem{\textbf{Infrastructure}: Implemented the Azure infrastructure and networking in Terraform consisting of AKS, ADLS Gen2, SQL Servers, app registrations a DevTest Lab and more.}
+        \CVItem{\textbf{Scheduling:} Deployed and maintained the Airflow scheduler on Kubernetes with a self-made Helm chart.}
+        \CVItem{\textbf{Environment:} Created a Python package to bootstrap the development environment for each developer, with authentication to the secrets via Azure Keyvault via VS Code credentials and with simple APIs to datasources in ARAG. This package also automatically provided the developer with a Dockerfile as well as an Azure Pipeline file for the project they are working on.}
+        \CVItem{\textbf{Security: }Automated the creation of IAM Groups in Azure using properties of the user in Azure Active Directory. Using Python to pull data from the Graph API, which then created the Terraform code for the AzureAD provider dynamically.}
+        \CVItem{\textbf{APIs:} Created a Python package to automatically bootstrap an API out of an existing database. The code for for this API is available on GitHub, PyPi and DockerHub as \href{https://github.com/mrpowerus/bootstrapi}{\underline{BootstrAPI}}.}
+        \CVItem{\textbf{Documentation: } Automatically creation of documentation using a Sphinx-based web-app}
+        \CVItem{\textbf{Data ingestion: } Build various ELT pipelines using, PySpark (Python), Docker and Airflow. Also build a tool to import data from Salesforce using their Bulk API. Available on GitHub and PyPi as \href{https://github.com/mrpowerus/salesforce-bulk-python}{\underline{salesforce-bulk-python}}.}
+        \CVItem{\textbf{Teaching: } Coaching existing members of the BI team to use the new stack and acting as a bridge between business and IT.}
+      \CVItemListEnd
+      
+    \CVSubheading
+      {Data Scientist}{October 2019 -- September 2020}
+      {ARAG SE}{Leusden, NL} \\ \vspace{14pt}
+      
+      After my study Econometrics, I started working at ARAG the Actuarial department. My focus was on automating various reports, introducing Azure DevOps, Git and more structured and automated way-of-working.
+      
+      \CVItemListStart
+        \CVItem{Build a T-SQL parser that automatically generates a graph visualisation and dependency tree from your existing batch of T-SQL queries.}
+        \CVItem{Build a solid datamodel for the Actuarial department using T-SQL and Python.}
+        \CVItem{Continuing my work on the \href{https://www.ag-ai.nl/view/43430-thesis.pdf}{\underline{Micro-level Loss Reserving model}}.}
+      \CVItemListEnd
+      
+    \CVSubheading
+      {Linux Server Admin (Side Job)}{April 2019 -- October 2019}
+      {River Biomedics}{Enschede, NL}
+      \CVItemListStart
+        \CVItem{Next to writing my thesis, I set up and maintained a Linux cloud solution for a Biotech startup. Using NextCloud Drive, OpenVPN, Postfix, Dovecot, Apache, PHP, MySQL}
+      \CVItemListEnd
+
+    \CVSubheading
+      {Actuary (Thesis Internship)}{April 2019 -- August 2019}
+      {ARAG SE}{Leusden, NL}
+      \CVItemListStart
+        \CVItem{Winner of the Johan de Witt thesisprice 2019}
+        \CVItem{Wrote an \href{https://www.actuaris.info/nieuws/actuarieel/johan-de-witt-prijzen-2019/35429}{\underline{award-winning}} thesis on the subject of micro-level loss reserving (forecasting future insurance claims)}
+        \CVItem{Used various Python packages for statistics (PyMC3, Statsmodels)}
+     \CVItemListEnd
+     
+    \CVSubheading
+      {Full-stack Developer (Project)}{June 2018 -- October 2018}
+      {XLConnect (start-up)}{Amsterdam, NL}
+      \CVItemListStart
+        \CVItem{Contributed to a start-up with my previous manager from my internship at Nationale-Nederlanden}
+        \CVItem{Setup a OpenID Connect Server (IdentityServer4)}
+        \CVItem{Wrote the front- (bare CSS/JS/HTML) and backend for an ASP.NET Core + MongoDB webapp}
+     \CVItemListEnd
+      
+    \CVSubheading
+      {C\# Developer - Pricing \& Hedging (Internship)}{February 2018 -- June 2018}
+      {Nationale-Nederlanden}{Rotterdam, NL}
+      \CVItemListStart
+        \CVItem{Joined the development team for the front-end development of a WPF app}
+        \CVItem{Learned C\#, Visual Studio and extended my knowledge of various OO Design Patterns}
+        \CVItem{Used Azure Devops for CI/CD and explored possibilities of the Azure Cloud}
+    \CVItemListEnd
+    \CVSubheading
+      {Java Developer (Holiday Job)}{Juli 2017 -- September 2017}
+      {LYNX Stock Broker}{Amsterdam, NL}
+      \CVItemListStart
+        \CVItem{Developed various auto-trading bots using the Java Interactive Brokers API}
+        \CVItem{GUI Design in AWT}
+      \CVItemListEnd
+    \CVSubheading
+      {Attendent for the Intellectually Disabled (Weekend Job)}{May 2012 -- February 2019}
+      {Gemiva-SVG Groep}{Gouda, NL}
+      \CVItemListStart
+        \CVItem{Mentored a community of 6 heavily intellectually disabled people}
+        \CVItem{Learned a lot of soft-skills and things about the human nature (what drives people)}
+      \CVItemListEnd
+  \CVSubHeadingListEnd
+
+%-----EDUCATION----------------------------------------------------------------
+\section{Education}
+  \CVSubHeadingListStart
+%    \CVSubheading % Example
+%      {Degree Achieved}{Years of Study}
+%      {Institution of Study}{Where it is located}
+    \CVSubheading
+      {{Master of Science $|$ \emph{\small{Econometrics and Management Science}}}}{2017 -- 2019}
+      {Erasmus University}{Rotterdam, NL}
+    \CVSubheading
+      {{Bachelor of Science $|$ \emph{\small{Electrical Engineering, Minor: Finance}}}}{2013 -- 2017}
+      {Delft Univeristy of Technology}{Delft, NL}
+  \CVSubHeadingListEnd
+
+
+%-----HONORS AND AWARDS--------------------------------------------------------
+\section{Honors, Awards and Certifications}
+  \CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What}{When}
+%      {Short Description}{}
+    \CVSubheading
+    {Microsoft Certified: Azure Solution Architect Expert}{April 2021}
+    {Expertise in designing and implementing solutions that run on Microsoft Azure}{}
+    \CVSubheading
+      {Johan de Witt Master Thesis Price - Koninklijk Actuarieel Genootschap}{November 2019}
+      {Price for best Masters thesis in the Dutch insurance field}{}
+    \CVSubheading
+      {AM Talent Top 25 Talent Award - AssurantieMagazine}{Oktober 2020}
+      {Talent Award for the most promising young employees in the Insurance field.}{}
+  
+  \CVSubHeadingListEnd
+    
+%------------------------------------------------------------------------------
+\end{document}
