@@ -28,5 +28,4 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_KEY }}
           source: "cv.pdf"
-          rm: true
           target: "/var/www/mikepieters.com"
