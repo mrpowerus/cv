@@ -1,0 +1,26 @@
+name: Publish
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: build pdf
+        run: make pdf
+      - name: SCP Files
+        uses: appleboy/scp-action@v0.1.1
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "cv.pdf"
+          rm: true
+          target: "/var/www/mikepieters.com"
